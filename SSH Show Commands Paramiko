@@ -13,6 +13,8 @@ f = open("showoutput.txt","w")
 
 net_connect = Netmiko(**my_device)
 
+#test line
+
 output = net_connect.send_command("show int status")
 
 print (output)
