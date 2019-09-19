@@ -1,0 +1,25 @@
+from netmiko import Netmiko
+
+
+
+my_device = {
+    "host": "<IP address>",
+    "username": "ganesh",
+    "password": "Password77*",
+    "device_type": "cisco_ios",
+}
+
+f = open("showoutput.txt","w")
+
+net_connect = Netmiko(**my_device)
+
+output = net_connect.send_command("show int status")
+
+print (output)
+
+f.write(output)
+
+net_connect.disconnect()
+
+f.close()
+
